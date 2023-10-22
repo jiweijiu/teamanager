@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index主页</title>
+</head>
+<body>
+<a href="/app/register/">注册</a>
+<a href="/app/login/">登录</a>
+<ol>
+    {% for i in tea %}
+    <li>{{ i.name }}</li>
+    {% empty %}
+    <li>未注册老师</li>
+    {% endfor %}
+</ol>
+</body>
+</html>

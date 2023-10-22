@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home主页</title>
+</head>
+<body>
+<a href="/app/register/">注册</a>
+<a href="/app/login/">登录</a>
+<a href="/app/quit/">退出</a>
+欢迎:{{ account }}
+<a href="/app/addstudent/">添加学生信息</a>
+<h1>查看本班学生</h1>
+<ol>
+    {% for i in stbind %}
+    <li>{{ i.name }}--{{ i.age }}--<a href="/app/delstu/?id={{ i.id }}">解绑</a></li>
+    {% empty %}
+    <li>未绑定学生</li>
+    {% endfor %}
+</ol>
+<h1>查看非本班学生</h1>
+<ol>
+    {% for i in stno %}
+    <li>{{ i.name }}--{{ i.age }}--<a href="/app/bindstu/?id={{ i.id }}">绑定</a></li>
+    {% empty %}
+    <li>未解绑学生</li>
+    {% endfor %}
+</ol>
+</body>
+</html>
